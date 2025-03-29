@@ -2,9 +2,11 @@
 ## Overview
 This document explains how to set up and run the mapping process using a TurtleBot3 robot in a 3D simulation environment with ROS2 Humble on Ubuntu 22.04. The process includes simulation configuration, SLAM implementation and autonomous navigation for mapping. 
 ### Prerequisites
-Ubuntu 22.04
 ROS2 Humble
-Docker
+Gazebo
+Cartographer
+Python
+Ubuntu 22.04
 ## Running the Simulation (All inside a Docker container)
 ### 1. Launch Gazebo Simulation
 `ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py`
