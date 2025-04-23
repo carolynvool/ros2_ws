@@ -11,7 +11,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
-                    FindPackageShare('turtlebot3_gazebo'),
+                    FindPackageShare('my_robot_controller'),
                     'launch',
                     'my_turtlebot3_world.launch.py'
                 ])

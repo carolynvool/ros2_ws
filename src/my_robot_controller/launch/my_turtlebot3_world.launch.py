@@ -35,7 +35,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory('my_robot_controller'),
         'worlds',
-        'my_new_world.world'
+        'new_world1.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
