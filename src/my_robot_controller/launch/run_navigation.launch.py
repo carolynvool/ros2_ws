@@ -19,33 +19,35 @@ def generate_launch_description():
         'maps',
         'map1.yaml'
     )
-
-    # Gazebo world launch
     gazebo_world = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_turtlebot3_gazebo, 'launch', 'my_turtlebot3_world.launch.py')
+                os.path.join(pkg_turtlebot3_gazebo, 'launch', 'my_turtlebot3_world.launch.py')
         )
     )
 
-    # Navigation node launch
+
     navigation_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_turtlebot3_nav2, 'launch', 'navigation2.launch.py')
+                os.path.join(pkg_turtlebot3_nav2, 'launch', 'navigation2.launch.py')
         ),
         launch_arguments={'use_sim_time': use_sim_time, 'map': map_dir}.items()
     )
+     
 
-    # Goal pose publisher node
+
     goal_pose_publisher = Node(
-        package='my_robot_controller',
-        executable='navigation',
-        name='navigation'
+           package='my_robot_controller',
+           executable='navigation',
+           name='navigation'
+           
+           
     )
-
-    # Create the launch description and add all actions
+   
+   
     ld = LaunchDescription()
-    ld.add_action(gazebo_world)
     ld.add_action(navigation_node)
+    ld.add_action(gazebo_world)
     ld.add_action(goal_pose_publisher)
+
 
     return ld
