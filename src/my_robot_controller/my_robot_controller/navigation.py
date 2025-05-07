@@ -13,12 +13,12 @@ class TurtleNavigationNode(Node):
         super().__init__("navigation")
         self.get_logger().info("Navigation Node started")
 
-       self.goal_poses = [
+        self.goal_poses = [
            {'x': 1.5, 'y': -1.0, 'yaw': -30},
            {'x': 2.5, 'y': 2.0, 'yaw': 60},
            {'x': 2.5, 'y': -1.0, 'yaw': 0},
            {'x': 1.5, 'y': 2.0, 'yaw': 90}
-       ]
+        ]
 
 
         self.current_goal_index = 0
