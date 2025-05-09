@@ -31,7 +31,6 @@ class AWNavigationNode(Node):
             ChangeOperationMode, '/system/operation_mode/change_operation_mode')
         self.change_mode_req = ChangeOperationMode.Request()
 
-        # Initial Pose (updated)
         initial_pose = PoseWithCovarianceStamped()
         initial_pose.header.frame_id = 'map'
         initial_pose.pose.pose.position.x = 3720.771728515625
